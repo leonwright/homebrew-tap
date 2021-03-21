@@ -5,24 +5,24 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.0-alpha2"
+  version "0.1.0-alpha3"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Darwin_x86_64.tar.gz"
-    sha256 "7a0c50860a07be70e75eb9e338273a6063d15a9ad55cc62ab46b1d58dea64923"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha3/reactoragent_0.1.0-alpha3_Darwin_x86_64.tar.gz"
+    sha256 "a051dd1da1891b173a80f27aa8cb6923b803cee0ebbb665cc903e4f6c48e9458"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Darwin_arm64.tar.gz"
-    sha256 "935a76d0f09276dd25f8962c7ffa19a5b27b2bdd2e6e760840b2628742cf7d00"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha3/reactoragent_0.1.0-alpha3_Darwin_arm64.tar.gz"
+    sha256 "0ac6f4bf79fae4b62592b0508996b06e81c46d14598dbd01838bfdab67a5f025"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Linux_x86_64.tar.gz"
-    sha256 "78294be5426fee3eebd7bbb1b61d85c1694659e49811c022c947980d2c52be7d"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha3/reactoragent_0.1.0-alpha3_Linux_x86_64.tar.gz"
+    sha256 "075eea4c8888a13bf12ee7d77319b030de00ad3db20b3c605582009db4b9af4a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Linux_arm64.tar.gz"
-    sha256 "d9783282da1f5bebc10d0b7c72585260e6aec5577c1080ce31cfbd35b30924ec"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha3/reactoragent_0.1.0-alpha3_Linux_arm64.tar.gz"
+    sha256 "ffafec3bed85c7e0dc6e5a9bcfbbaefb6340ec1ed29c9f92e9a552641d8cab04"
   end
 
   def install
@@ -49,7 +49,7 @@ class Reactoragent < Formula
       <string>tech.nerderbur.reactoragent</string>
       <key>ProgramArguments</key>
       <array>
-          <string>daemon</string>
+          <string>/opt/homebrew/bin/daemon</string>
       </array>
       <key>KeepAlive</key>
       <true/>
