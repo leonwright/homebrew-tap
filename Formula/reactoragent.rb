@@ -5,24 +5,24 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "1.0.0-alpha1"
+  version "0.1.0-alpha"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v1.0.0-alpha1/reactoragent_1.0.0-alpha1_Darwin_x86_64.tar.gz"
-    sha256 "b6f37dcedc6d1de933858d95be04591cedb70cf372e9290a80f6ef971891507d"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Darwin_x86_64.tar.gz"
+    sha256 "383362e2bd46e95b0d2b64ad99554e2f294d0ebb87736b813a5a423eb701888a"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v1.0.0-alpha1/reactoragent_1.0.0-alpha1_Darwin_arm64.tar.gz"
-    sha256 "6e92d6facb790e58df4bb9091a097e57c99ddd700a111c312bcf0835c83d3496"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Darwin_arm64.tar.gz"
+    sha256 "44abea37c9148edb45ca7a5040a0a4ca09e6683d32652909715b268254612876"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v1.0.0-alpha1/reactoragent_1.0.0-alpha1_Linux_x86_64.tar.gz"
-    sha256 "ad3a3c7f66bbbf52188ac8fa037f4bf02496b6cd660264076089cd51c457e8d4"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Linux_x86_64.tar.gz"
+    sha256 "6f139e7894039524a1f58828f93f566fdf1ded503cef0b51736fe82c1a992883"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v1.0.0-alpha1/reactoragent_1.0.0-alpha1_Linux_arm64.tar.gz"
-    sha256 "bbd70c24f69fdad570c43903d078ae453a14496a0158fe6615aa7e5a30f76eb7"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Linux_arm64.tar.gz"
+    sha256 "dfa9333da7b40cf0024ed60b1682eb241319bd892bb517c5e19f2cd576d96e24"
   end
 
   def install
