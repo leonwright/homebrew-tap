@@ -5,24 +5,24 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.0-alpha"
+  version "0.1.0-alpha2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Darwin_x86_64.tar.gz"
-    sha256 "383362e2bd46e95b0d2b64ad99554e2f294d0ebb87736b813a5a423eb701888a"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Darwin_x86_64.tar.gz"
+    sha256 "7a0c50860a07be70e75eb9e338273a6063d15a9ad55cc62ab46b1d58dea64923"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Darwin_arm64.tar.gz"
-    sha256 "44abea37c9148edb45ca7a5040a0a4ca09e6683d32652909715b268254612876"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Darwin_arm64.tar.gz"
+    sha256 "935a76d0f09276dd25f8962c7ffa19a5b27b2bdd2e6e760840b2628742cf7d00"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Linux_x86_64.tar.gz"
-    sha256 "6f139e7894039524a1f58828f93f566fdf1ded503cef0b51736fe82c1a992883"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Linux_x86_64.tar.gz"
+    sha256 "78294be5426fee3eebd7bbb1b61d85c1694659e49811c022c947980d2c52be7d"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha/reactoragent_0.1.0-alpha_Linux_arm64.tar.gz"
-    sha256 "dfa9333da7b40cf0024ed60b1682eb241319bd892bb517c5e19f2cd576d96e24"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha2/reactoragent_0.1.0-alpha2_Linux_arm64.tar.gz"
+    sha256 "d9783282da1f5bebc10d0b7c72585260e6aec5577c1080ce31cfbd35b30924ec"
   end
 
   def install
@@ -35,6 +35,33 @@ class Reactoragent < Formula
   def caveats; <<~EOS
     1. Edit the example.conf file in /usr/local/etc/reactoragent
     2. Rename example.conf to default.conf
+  EOS
+  end
+
+  plist_options :startup => false
+
+  def plist; <<~EOS
+    <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+      <key>Label</key>
+      <string>tech.nerderbur.reactoragent</string>
+      <key>ProgramArguments</key>
+      <array>
+          <string>daemon</string>
+      </array>
+      <key>KeepAlive</key>
+      <true/>
+      <key>StandardOutPath</key>
+      <string>/var/log/reactoragent.log</string>
+      <key>StandardErrorPath</key>
+      <string>/var/log/reactoragent.log</string>
+      <key>Debug</key>
+      <true/>
+  </dict>
+</plist>
+
   EOS
   end
 end
