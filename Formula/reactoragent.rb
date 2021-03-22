@@ -5,28 +5,28 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.0-alpha10"
+  version "0.1.0-alpha11"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Darwin_x86_64.tar.gz"
-    sha256 "1210b3fc9ef5e48baea24c4d2e5502ccd551332408045878c086ab737c26853e"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Darwin_x86_64.tar.gz"
+    sha256 "d29fe43b646892c6b66d7048874559a9159c4a19b19cb826b9ad9c84470827b8"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Darwin_arm64.tar.gz"
-    sha256 "a416f16695c261a03e56e5c2faffe0faef782406a39810014f76f42bb23dc110"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Darwin_arm64.tar.gz"
+    sha256 "2733fc6abf13ae7aadfa1aaaf6ec71d2a5fed9ed8ba3ae2f95674fc7e8787517"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Linux_x86_64.tar.gz"
-    sha256 "cd3bd257147826f728b83ee5af876cd6c02333660b98f29738bc007428e346fb"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Linux_x86_64.tar.gz"
+    sha256 "d0ca87834a82fdc4dd5c836ea6e82cf4f229af7e48a72b9be53a448738a34485"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Linux_arm64.tar.gz"
-    sha256 "39ecdba43585c2313c6800f36a6e6794bd204bb249e28d5c95eb6296a6a190bc"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Linux_arm64.tar.gz"
+    sha256 "5fb441f86d665cf5e9edad239fd643d7be4367080d8db67631a4b01b393644a5"
   end
 
   def install
-    prefix.install Dir[*]
+    prefix.install Dir["*"]
   end
 
   def post_install
