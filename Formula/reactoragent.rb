@@ -5,36 +5,34 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.0-alpha5"
+  version "0.1.0-alpha6"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha5/reactoragent_0.1.0-alpha5_Darwin_x86_64.tar.gz"
-    sha256 "c9fe32fa148ab13d2fbeb70a95d178a5a2dff167b2eb52e569ae769051c87f03"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Darwin_x86_64.tar.gz"
+    sha256 "695fcd408c0cdb71fbb8fda37c24a4efaf8f02492a4766827fd7682adf22c0db"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha5/reactoragent_0.1.0-alpha5_Darwin_arm64.tar.gz"
-    sha256 "9c273258d669c651fd35f4893353530a614b6c0674169c861550f29aad977fef"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Darwin_arm64.tar.gz"
+    sha256 "221d249a55b2431408ee6d0866f9cd34c87b88844d7911b2a0604a43710eb0e3"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha5/reactoragent_0.1.0-alpha5_Linux_x86_64.tar.gz"
-    sha256 "865ab198fd11e526ab78b8ba9ac5df77f6f5d85644763c6c644452308b6cba55"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Linux_x86_64.tar.gz"
+    sha256 "b2aa3d187eb61bbee3e76a2f894178a016faf9aa21e28e448bf31f827817fad9"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha5/reactoragent_0.1.0-alpha5_Linux_arm64.tar.gz"
-    sha256 "46c9e933ff49468f484d734127cc37542ca75a231954c291350f7d121b69abe2"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Linux_arm64.tar.gz"
+    sha256 "d484f22eab69f8f92651376b251beadd2d79f05a1507201b493957e25ff847dc"
   end
 
   def install
     bin.install "daemon"
-    etc.mkpath
-    mkdir "#{etc}/reactorapp"
-    etc.install "config/example.conf" => "reactorapp/example.conf"
+    prefix.install "config/example.conf" => "reactoragent.conf"
+    etc.install_symlink prefix/"reactoragent.conf"
   end
 
   def caveats; <<~EOS
-    1. Edit the example.conf file in /usr/local/etc/reactoragent
-    2. Rename example.conf to default.conf
+    1. Edit the default.conf file in #[prefix]
   EOS
   end
 
