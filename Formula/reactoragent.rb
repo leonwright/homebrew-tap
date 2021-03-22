@@ -10,19 +10,19 @@ class Reactoragent < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Darwin_x86_64.tar.gz"
-    sha256 "695fcd408c0cdb71fbb8fda37c24a4efaf8f02492a4766827fd7682adf22c0db"
+    sha256 "30ab24a644e3226d9bac1b6e9e41a25a09aed3b74a3f379e8622deb55dc64dd7"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Darwin_arm64.tar.gz"
-    sha256 "221d249a55b2431408ee6d0866f9cd34c87b88844d7911b2a0604a43710eb0e3"
+    sha256 "56c0044879a8c630e0bfad5e6dec982132dd5b7bbdde4bba351afd9fa5bb976c"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Linux_x86_64.tar.gz"
-    sha256 "b2aa3d187eb61bbee3e76a2f894178a016faf9aa21e28e448bf31f827817fad9"
+    sha256 "1742f2856bb9982be3e5294af94cdd0b7ba3925a9796f93f6e631c3a233a66b2"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha6/reactoragent_0.1.0-alpha6_Linux_arm64.tar.gz"
-    sha256 "d484f22eab69f8f92651376b251beadd2d79f05a1507201b493957e25ff847dc"
+    sha256 "f97633851e8844c69f7541d342546eed2781a8ca5a1aec00f1301e91d650eeb5"
   end
 
   def install
@@ -32,7 +32,7 @@ class Reactoragent < Formula
   end
 
   def caveats; <<~EOS
-    1. Edit the default.conf file in #[prefix]
+    1. Edit the default.conf file in #{prefix}
   EOS
   end
 
