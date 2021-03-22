@@ -5,33 +5,34 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.0-alpha9"
+  version "0.1.0-alpha10"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha9/reactoragent_0.1.0-alpha9_Darwin_x86_64.tar.gz"
-    sha256 "8bd14b0726b17e8ded8fc5242e5ff844ce0e84746bc1e67cc9c684a78d991c4c"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Darwin_x86_64.tar.gz"
+    sha256 "1210b3fc9ef5e48baea24c4d2e5502ccd551332408045878c086ab737c26853e"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha9/reactoragent_0.1.0-alpha9_Darwin_arm64.tar.gz"
-    sha256 "c20eb658f65293bd264bc06f397e841292d546339a4caa4a5c7b1f2e24d20e11"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Darwin_arm64.tar.gz"
+    sha256 "a416f16695c261a03e56e5c2faffe0faef782406a39810014f76f42bb23dc110"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha9/reactoragent_0.1.0-alpha9_Linux_x86_64.tar.gz"
-    sha256 "23e11a3a2ce656e3e232a4b31ed664b69a42ca785bbbc686684481881e5c8e71"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Linux_x86_64.tar.gz"
+    sha256 "cd3bd257147826f728b83ee5af876cd6c02333660b98f29738bc007428e346fb"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha9/reactoragent_0.1.0-alpha9_Linux_arm64.tar.gz"
-    sha256 "2d29fcf34e29a15316b308831c0acc5be6bc56e46f3ae48e3805f5933fad0e8f"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha10/reactoragent_0.1.0-alpha10_Linux_arm64.tar.gz"
+    sha256 "39ecdba43585c2313c6800f36a6e6794bd204bb249e28d5c95eb6296a6a190bc"
   end
 
   def install
-    bin.install "daemon"
+    prefix.install Dir[*]
   end
 
   def post_install
-    if !(File.exist?((prefix/"reactoragent.conf"))) then
-  prefix.install "config/example.conf" => "reactoragent.conf"
+    if !(File.exist?((etc/"reactoragent.conf"))) then
+  etc.mkpath
+  etc.install "config/example.conf" => "reactoragent.conf"
 end
 
   end
