@@ -5,24 +5,24 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.0-alpha11"
+  version "0.1.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Darwin_x86_64.tar.gz"
-    sha256 "d29fe43b646892c6b66d7048874559a9159c4a19b19cb826b9ad9c84470827b8"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0/reactoragent_0.1.0_Darwin_x86_64.tar.gz"
+    sha256 "87c8c84ef8ae6d634b336f3094e377379d3555dbffb46607b75d90744fe03b8c"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Darwin_arm64.tar.gz"
-    sha256 "2733fc6abf13ae7aadfa1aaaf6ec71d2a5fed9ed8ba3ae2f95674fc7e8787517"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0/reactoragent_0.1.0_Darwin_arm64.tar.gz"
+    sha256 "3b2cd01a4d789015a792a3f2ae1627e764097c84bfb3637c38b6c947eea3e236"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Linux_x86_64.tar.gz"
-    sha256 "d0ca87834a82fdc4dd5c836ea6e82cf4f229af7e48a72b9be53a448738a34485"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0/reactoragent_0.1.0_Linux_x86_64.tar.gz"
+    sha256 "04b89d64f6221e37399b0389e5d3f0bcf67d95c7cdde4ea068fc81c2dd06277b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0-alpha11/reactoragent_0.1.0-alpha11_Linux_arm64.tar.gz"
-    sha256 "5fb441f86d665cf5e9edad239fd643d7be4367080d8db67631a4b01b393644a5"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.0/reactoragent_0.1.0_Linux_arm64.tar.gz"
+    sha256 "3b9aa901bf2020fe3b2947878726a30fcc28acbc6ad66ab262cd2bedcab685f0"
   end
 
   def install
