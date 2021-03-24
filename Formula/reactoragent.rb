@@ -5,24 +5,24 @@
 class Reactoragent < Formula
   desc "Supercharge your development server."
   homepage "https://nerderbur.tech"
-  version "0.1.1"
+  version "0.1.2"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.1/reactoragent_0.1.1_Darwin_x86_64.tar.gz"
-    sha256 "cfd479e7e67d21e42e12542aa471fe511f71796eabd042838395898251d28ee8"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.2/reactoragent_0.1.2_Darwin_x86_64.tar.gz"
+    sha256 "c180c2f3d4ebae917a1db49311c49b2f481a2f39617a1c2b62b84fe9135325e3"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.1/reactoragent_0.1.1_Darwin_arm64.tar.gz"
-    sha256 "50818f492c19b1c9609080cb5a75055d64fad661a73063cbaa79dbd817d68a06"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.2/reactoragent_0.1.2_Darwin_arm64.tar.gz"
+    sha256 "d91e84ac15fa27fa4d5f866cd542126319f7891681002b84081d8569db965558"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.1/reactoragent_0.1.1_Linux_x86_64.tar.gz"
-    sha256 "5d9155a51cd6b59743cb9feb8f14803e2646c0ccad50171adec8edc3c8f4a02c"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.2/reactoragent_0.1.2_Linux_x86_64.tar.gz"
+    sha256 "052e6197da86185e6383938b59a27c8eeb44b48d06c4b962ce125caad0b586a2"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.1/reactoragent_0.1.1_Linux_arm64.tar.gz"
-    sha256 "59d4b160652a8781e335c629338abf66c05897bb62ee0d64422e2b579ea9bbec"
+    url "https://github.com/leonwright/reactor-agent/releases/download/v0.1.2/reactoragent_0.1.2_Linux_arm64.tar.gz"
+    sha256 "06466424322c519480af69c4e22f0d9b6bba5ffd1a23895590aeb8fdd2e2fc62"
   end
 
   def install
